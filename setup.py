@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="openapi-client-python",
-    version="0.1.3",
+    version="1.0.0",
     author="autoocto",
     author_email="autoocto.ai@gmail.com",
     description="A tool to generate Python clients from OpenAPI specifications.",
