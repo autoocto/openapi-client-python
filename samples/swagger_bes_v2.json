@@ -1,0 +1,3425 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Buyer Experience Service API",
+    "version": "v2"
+  },
+  "paths": {
+    "/api/v2/engagements/{engagementId}/login-users": {
+      "get": {
+        "tags": [
+          "Engagement"
+        ],
+        "operationId": "EngagementGetLoginUsersByEngagementId",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "engagementId",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "format": "int32",
+            "default": 0
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "format": "int32",
+            "default": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/EngagementLoginUserDtoPaginationDto"
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/info": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetLinkInfo",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "trackingType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "isSellerPreview",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "initialDoc",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/verification": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkVerification",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/layout": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetLayout",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/contents/first/manifests": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetFirstContentManifests",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "trackingType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "isSellerPreview",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "initialDoc",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/contents/{contentId}/manifests": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetContentManifests",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "trackingType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "isSellerPreview",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/contents/all/manifests": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetAllContentManifests",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "trackingType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "isSellerPreview",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "excludedContentIds",
+            "type": "array",
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/contents/{contentId}/download/{downloadFormat}": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetContentDownloadUrls",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "path",
+            "name": "downloadFormat",
+            "required": true
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "trackingType",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "isSellerPreview",
+            "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/creator/avatar": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetCreatorAvatar",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/owner": {
+      "get": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkGetLinkOwner",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/sessions": {
+      "post": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkCreateSession",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "p",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "cp",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/sessions/{sessionId}/events": {
+      "patch": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkAddSessionEvents",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": { }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v2/engagement-links/{linkUniqueId}/sessions/{sessionId}/sharing": {
+      "put": {
+        "tags": [
+          "EngagementLink"
+        ],
+        "operationId": "EngagementLinkShareLink",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "linkUniqueId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "query",
+            "name": "tenantId",
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/EngagementSharingRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ActionMetadataMicroapp": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "type": "string"
+        },
+        "screenId": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "originId": {
+          "type": "string"
+        },
+        "originParentId": {
+          "type": "string"
+        },
+        "campaignId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "setId": {
+          "type": "string"
+        },
+        "accountId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "sharedDocSetId": {
+          "type": "string"
+        },
+        "sharerId": {
+          "type": "string"
+        },
+        "bytes": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "broadcaster": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "screenName": {
+          "type": "string"
+        },
+        "pageNumber": {
+          "type": "string"
+        },
+        "documentPageIndex": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "index": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ActionStatus": {
+      "enum": [
+        "Failure",
+        "Success"
+      ],
+      "type": "string"
+    },
+    "ActivityType": {
+      "enum": [
+        "ViewContent",
+        "EndViewContent",
+        "DownloadContent",
+        "SharingLink",
+        "OptIn",
+        "OptOut",
+        "SignIn",
+        "SignOut",
+        "SessionOpen",
+        "SessionEnd",
+        "DeactivateUser",
+        "SessionResume",
+        "SessionSuspend"
+      ],
+      "type": "string"
+    },
+    "ArticlePageSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "headingColor": {
+          "type": "string"
+        },
+        "link": {
+          "$ref": "#/definitions/LinkSetting"
+        },
+        "dynamicWidgetWithoutResultBehavior": {
+          "type": "string"
+        },
+        "linkTargetDefaultOption": {
+          "type": "string"
+        },
+        "disableXFrame": {
+          "type": "boolean"
+        },
+        "backgroundColor": {
+          "type": "string"
+        },
+        "fontSelection": {
+          "type": "string"
+        },
+        "buttonColorOptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enableAutoHeightForDoclist": {
+          "type": "boolean"
+        },
+        "layoutMode": {
+          "type": "string"
+        },
+        "dividerBlockTextColor": {
+          "type": "string"
+        },
+        "dividerBlockBackgroundColor": {
+          "type": "string"
+        },
+        "dividerTextAndLineColor": {
+          "type": "string"
+        },
+        "enableHtmlXssValidation": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BaseLinkSessionEvent": {
+      "type": "object",
+      "properties": {
+        "linkSessionEventType": {
+          "$ref": "#/definitions/LinkSessionEventType"
+        },
+        "offsetInMilliseconds": {
+          "type": "string"
+        },
+        "clientTimestamp": {
+          "type": "string"
+        },
+        "viewerContext": {
+          "$ref": "#/definitions/ViewerContext"
+        },
+        "clientId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BasicType": {
+      "enum": [
+        "file",
+        "folder",
+        "kit",
+        "template",
+        "url",
+        "article",
+        "livedoc",
+        "datasource",
+        "livedoc-component",
+        "email-template-component",
+        "email-template",
+        "microapp",
+        "generation",
+        "guidedassembly",
+        "stage",
+        "flowpresentation",
+        "video",
+        "externalvideo"
+      ],
+      "type": "string"
+    },
+    "BatchGetUrlsRequestDto": {
+      "type": "object",
+      "properties": {
+        "recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecipientRequestDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "BatchGetUrlsResponseDto": {
+      "type": "object",
+      "properties": {
+        "linkId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementId": {
+          "type": "string"
+        },
+        "engagementType": {
+          "type": "string"
+        },
+        "recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RecipientUrlDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "BooleanServiceResultInfo": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "error": {
+          "$ref": "#/definitions/ServiceError"
+        },
+        "serviceResult": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BrowserType": {
+      "enum": [
+        "unknown",
+        "chrome",
+        "firefox",
+        "internet explorer",
+        "edge",
+        "safari",
+        "ios",
+        "android",
+        "windows"
+      ],
+      "type": "string"
+    },
+    "BuyerEditableProfileDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "photoThumbnailFormat": {
+          "type": "string"
+        },
+        "photoThumbnailBase64": {
+          "type": "string"
+        },
+        "photoThumbnailId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BuyerExperienceSettingName": {
+      "enum": [
+        "ViewerSetting",
+        "LiveSendDeliveryOptionSetting",
+        "UserGeoIpTrackingSetting"
+      ],
+      "type": "string"
+    },
+    "CasContentPageThumbnailThinDto": {
+      "type": "object",
+      "properties": {
+        "pagePreviews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PageThumbnailDto"
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ClientDetailDto": {
+      "type": "object",
+      "properties": {
+        "ipAddress": {
+          "type": "string"
+        },
+        "deviceType": {
+          "$ref": "#/definitions/DeviceType"
+        },
+        "browser": {
+          "$ref": "#/definitions/BrowserType"
+        },
+        "browserVersion": {
+          "type": "string"
+        },
+        "operatingSystem": {
+          "$ref": "#/definitions/OSType"
+        },
+        "operatingSystemVersion": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/ClientLocationNameDto"
+        },
+        "city": {
+          "$ref": "#/definitions/ClientLocationNameDto"
+        },
+        "application": {
+          "type": "string"
+        },
+        "applicationOverride": {
+          "type": "string"
+        },
+        "applicationType": {
+          "type": "string"
+        },
+        "productArea": {
+          "$ref": "#/definitions/ProductAreaType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ClientLocationNameDto": {
+      "type": "object",
+      "properties": {
+        "names": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "geoNameId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentCreatedResponseDto": {
+      "type": "object",
+      "properties": {
+        "commentId": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentDataResponseDto": {
+      "type": "object",
+      "properties": {
+        "commentId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "commentType": {
+          "$ref": "#/definitions/CommentType"
+        },
+        "createdUserType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "commentBody": {
+          "type": "string"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "isHidden": {
+          "type": "boolean"
+        },
+        "hiddenBy": {
+          "type": "string"
+        },
+        "modifiedAt": {
+          "type": "string"
+        },
+        "resolvedBy": {
+          "type": "string"
+        },
+        "resolvedAt": {
+          "type": "string"
+        },
+        "deletedBy": {
+          "type": "string"
+        },
+        "deletedUserType": {
+          "type": "string"
+        },
+        "deletedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "reactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommentReactionDto"
+          }
+        },
+        "latestReplyAt": {
+          "type": "string"
+        },
+        "threadSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserProfileDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentDataResponseDtoPaginationDto": {
+      "type": "object",
+      "properties": {
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "hasMore": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommentDataResponseDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentDetailSettingDto": {
+      "type": "object",
+      "properties": {
+        "notificationSetting": {
+          "$ref": "#/definitions/NotificationSettingType"
+        },
+        "isEnabled": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentModifiedRequestDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentModifiedResponseDto": {
+      "type": "object",
+      "properties": {
+        "updateStatus": {
+          "$ref": "#/definitions/ActionStatus"
+        },
+        "updatedResult": {
+          "$ref": "#/definitions/CommentDataResponseDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentModifyRequestDto": {
+      "type": "object",
+      "properties": {
+        "nanoId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "commentBody": {
+          "type": "string"
+        },
+        "mentionedUsers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginUserDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentNotificationSettingDto": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommentDetailSettingDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentPreviewResponseDto": {
+      "type": "object",
+      "properties": {
+        "creatorProfile": {
+          "$ref": "#/definitions/UserProfileDto"
+        },
+        "commentId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "commentType": {
+          "$ref": "#/definitions/CommentType"
+        },
+        "createdUserType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "commentBody": {
+          "type": "string"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "isHidden": {
+          "type": "boolean"
+        },
+        "hiddenBy": {
+          "type": "string"
+        },
+        "modifiedAt": {
+          "type": "string"
+        },
+        "resolvedBy": {
+          "type": "string"
+        },
+        "resolvedAt": {
+          "type": "string"
+        },
+        "deletedBy": {
+          "type": "string"
+        },
+        "deletedUserType": {
+          "type": "string"
+        },
+        "deletedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "reactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommentReactionDto"
+          }
+        },
+        "latestReplyAt": {
+          "type": "string"
+        },
+        "threadSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserProfileDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentReactionDto": {
+      "type": "object",
+      "properties": {
+        "userType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "reactionText": {
+          "type": "string"
+        },
+        "reactionAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentReactionRequestDto": {
+      "type": "object",
+      "properties": {
+        "reactionText": {
+          "type": "string"
+        },
+        "reactionShortName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentRequestDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "nanoId": {
+          "type": "string"
+        },
+        "commentBody": {
+          "type": "string"
+        },
+        "commentType": {
+          "$ref": "#/definitions/CommentType"
+        },
+        "parentCommentId": {
+          "type": "string"
+        },
+        "createdBy": {
+          "$ref": "#/definitions/LoginUserDto"
+        },
+        "mentionedUsers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginUserDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentResponse": {
+      "type": "object",
+      "properties": {
+        "updateStatus": {
+          "$ref": "#/definitions/ActionStatus"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CommentType": {
+      "enum": [
+        "General",
+        "Content",
+        "WelcomeMessage"
+      ],
+      "type": "string"
+    },
+    "CommentsEditResponseDto": {
+      "type": "object",
+      "properties": {
+        "updateStatus": {
+          "$ref": "#/definitions/ActionStatus"
+        }
+      },
+      "additionalProperties": false
+    },
+    "Content": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "$ref": "#/definitions/ContentRepository"
+        },
+        "type": {
+          "$ref": "#/definitions/BasicType"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContentManifestsRequestDto": {
+      "required": [
+        "contents"
+      ],
+      "type": "object",
+      "properties": {
+        "linkPermission": {
+          "$ref": "#/definitions/LinkPermissionRequestDto"
+        },
+        "contents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Content"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContentPreviewManifestsRequestDto": {
+      "required": [
+        "contents"
+      ],
+      "type": "object",
+      "properties": {
+        "contents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Content"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ContentRepository": {
+      "enum": [
+        "doccenter",
+        "library",
+        "workspace",
+        "newscenter",
+        "generatedlivedocs",
+        "presentationbuilder",
+        "livedoclifecycle",
+        "cms",
+        "meetings"
+      ],
+      "type": "string"
+    },
+    "CreateLinkRequest": {
+      "type": "object",
+      "properties": {
+        "engagementId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementType": {
+          "$ref": "#/definitions/EngagementType"
+        },
+        "externalReferenceId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "isSeparateSend": {
+          "type": "boolean"
+        },
+        "linkViewers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkViewerRequest"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateLinkResponse": {
+      "type": "object",
+      "properties": {
+        "linkId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "previewUrl": {
+          "type": "string"
+        },
+        "linkViewers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkViewerResponseDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "DeviceType": {
+      "enum": [
+        "unknown",
+        "pc",
+        "phone",
+        "tablet"
+      ],
+      "type": "string"
+    },
+    "DownloadFormats": {
+      "enum": [
+        "Original",
+        "PDF",
+        "All"
+      ],
+      "type": "string"
+    },
+    "DownloadFormatsAvailable": {
+      "enum": [
+        "Original",
+        "PDF",
+        "All"
+      ],
+      "type": "string"
+    },
+    "ECClientDetails": {
+      "type": "object",
+      "properties": {
+        "deviceType": {
+          "type": "string"
+        },
+        "browser": {
+          "type": "string"
+        },
+        "browserVersion": {
+          "type": "string"
+        },
+        "operatingSystem": {
+          "type": "string"
+        },
+        "operatingSystemVersion": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "cityLocales": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "countryLocales": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ECLinkContentSession": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "viewSessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "content": {
+          "$ref": "#/definitions/Content"
+        },
+        "format": {
+          "type": "string"
+        },
+        "downloaded": {
+          "type": "boolean"
+        },
+        "downloadFormats": { },
+        "duration": {
+          "format": "double",
+          "type": "number"
+        },
+        "pageViewSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ECPageViewSummary"
+          }
+        },
+        "pageViewed": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "pageCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "order": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "aliasName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ECPageViewSummary": {
+      "type": "object",
+      "properties": {
+        "pageIndex": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "duration": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ECSessionSummaryDetaiListDto": {
+      "type": "object",
+      "properties": {
+        "hasMore": {
+          "type": "boolean"
+        },
+        "offset": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "limit": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ECSessionSummaryDetailDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ECSessionSummaryDetailDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "linkId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "isDSR": {
+          "type": "boolean"
+        },
+        "clientDetails": {
+          "$ref": "#/definitions/ECClientDetails"
+        },
+        "linkContentSessions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ECLinkContentSession"
+          }
+        },
+        "totalContent": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalContentViewed": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalContentDownloaded": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sessionStartedAt": {
+          "type": "string"
+        },
+        "sessionEndedAt": {
+          "type": "string"
+        },
+        "layoutDuration": {
+          "format": "double",
+          "type": "number"
+        },
+        "totalDuration": {
+          "format": "double",
+          "type": "number"
+        },
+        "viewer": {
+          "$ref": "#/definitions/LinkSessionViewerDto"
+        },
+        "sharingEvents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SharingEventDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "EngagementLoginUserDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "userType": {
+          "type": "string"
+        },
+        "lastLoginLinkUrl": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EngagementLoginUserDtoPaginationDto": {
+      "type": "object",
+      "properties": {
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "hasMore": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EngagementLoginUserDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "EngagementSharingRequest": {
+      "required": [
+        "messageSubject",
+        "newRecipientEmailAddress",
+        "sharingUserEmailAddress",
+        "sharingUserFirstName",
+        "sharingUserLastName"
+      ],
+      "type": "object",
+      "properties": {
+        "sharingUserFirstName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserLastName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserEmailAddress": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        },
+        "newRecipientEmailAddress": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        },
+        "messageSubject": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "shortMessage": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "EngagementType": {
+      "enum": [
+        "LiveSend",
+        "DSR"
+      ],
+      "type": "string"
+    },
+    "GetOrCreateLinkRequest": {
+      "type": "object",
+      "properties": {
+        "engagementId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementType": {
+          "$ref": "#/definitions/EngagementType"
+        },
+        "externalReferenceId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "isSeparateSend": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GroupByType": {
+      "enum": [
+        "Interaction",
+        "Delivery",
+        "SharedLink",
+        "MeetingVideo"
+      ],
+      "type": "string"
+    },
+    "GroupSendLiveSendSettings": {
+      "type": "object",
+      "properties": {
+        "canDownload": {
+          "type": "boolean"
+        },
+        "downloadFormatMode": {
+          "$ref": "#/definitions/DownloadFormats"
+        },
+        "expiresAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "notificationType": {
+          "$ref": "#/definitions/NotificationType"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LegacyLiveSendSettingRequest": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "logoBlobId": {
+          "type": "string"
+        },
+        "logoDataBase64": {
+          "type": "string"
+        },
+        "isLogoUpdated": {
+          "type": "boolean"
+        },
+        "titleBackgroundColor": {
+          "type": "string"
+        },
+        "titleForegroundColor": {
+          "type": "string"
+        },
+        "highlightColor": {
+          "type": "string"
+        },
+        "showSignature": {
+          "type": "boolean"
+        },
+        "displaySignatureToggle": {
+          "type": "boolean"
+        },
+        "faviconId": {
+          "type": "string"
+        },
+        "browserTitle": {
+          "type": "string"
+        },
+        "openURLMode": {
+          "type": "string"
+        },
+        "faviconDataBase64": {
+          "type": "string"
+        },
+        "isFaviconUpdated": {
+          "type": "boolean"
+        },
+        "compliancePassword": {
+          "type": "string"
+        },
+        "isAllowSharingLink": {
+          "type": "boolean"
+        },
+        "isAllowLogin": {
+          "type": "boolean"
+        },
+        "trackIPAndGeolocation": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkDto": {
+      "type": "object",
+      "properties": {
+        "linkId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementType": {
+          "$ref": "#/definitions/EngagementType"
+        },
+        "externalReferenceId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "isSeparated": {
+          "type": "boolean"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkLayoutRequestDto": {
+      "type": "object",
+      "properties": {
+        "linkPermission": {
+          "$ref": "#/definitions/LinkPermissionRequestDto"
+        },
+        "layoutArticleId": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkPermissionRequestDto": {
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "compliancePassword": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionEndResponseDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "endedAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionEventType": {
+      "enum": [
+        "Unknown",
+        "SessionStartEvent",
+        "SessionEndEvent",
+        "BuyerShareEvent",
+        "GdprOptInEvent",
+        "GdprOptOutEvent",
+        "UserLoginEvent",
+        "UserLogoutEvent",
+        "UserDeactivationEvent",
+        "ViewContentStartEvent",
+        "ViewContentEndEvent",
+        "ViewPageableContentEvent",
+        "ViewMicroappContentEvent",
+        "DownloadContentEvent",
+        "MediaLoadedEvent",
+        "MediaPlayingEvent",
+        "MediaInProgressEvent",
+        "MediaForwardEvent",
+        "MediaBackwardEvent",
+        "MediaPausedEvent",
+        "MediaEndedEvent",
+        "SessionResume"
+      ],
+      "type": "string"
+    },
+    "LinkSessionLoginResponseDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "loginAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "lastLogoutAt": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionMetricRequestDto": {
+      "type": "object",
+      "properties": {
+        "contentId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "pageIndex": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "contentClass": {
+          "$ref": "#/definitions/Content"
+        },
+        "actionMetadataMicroapp": {
+          "$ref": "#/definitions/ActionMetadataMicroapp"
+        },
+        "activityType": {
+          "$ref": "#/definitions/ActivityType"
+        },
+        "extradata": { },
+        "offsetInMilliseconds": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionMetricResponseDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "metricId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "occurredAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionStartRequestDto": {
+      "type": "object",
+      "properties": {
+        "linkPermission": {
+          "$ref": "#/definitions/LinkPermissionRequestDto"
+        },
+        "linkUrl": {
+          "type": "string"
+        },
+        "timeZoneInfo": {
+          "type": "string"
+        },
+        "timeZoneOffset": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionStartResponseDto": {
+      "type": "object",
+      "properties": {
+        "connectionId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "startedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "loginUser": {
+          "$ref": "#/definitions/LoginUserDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionTrackingRequestDto": {
+      "type": "object",
+      "properties": {
+        "trackingType": {
+          "$ref": "#/definitions/TrackingType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionTrackingResponseDto": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "setAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSessionViewerDto": {
+      "type": "object",
+      "properties": {
+        "isIdentifiedViewer": {
+          "type": "boolean"
+        },
+        "displayName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkSetting": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string"
+        },
+        "triggerUnderlineSetting": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkViewerAclType": {
+      "enum": [
+        "View"
+      ],
+      "type": "string"
+    },
+    "LinkViewerDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "linkId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementType": {
+          "$ref": "#/definitions/EngagementType"
+        },
+        "linkUrl": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "acl": {
+          "$ref": "#/definitions/LinkViewerAclType"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/definitions/LinkViewerSource"
+        },
+        "sourceId": {
+          "type": "string"
+        },
+        "urlIdentifier": {
+          "type": "string"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isAnonymized": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkViewerRequest": {
+      "type": "object",
+      "properties": {
+        "recipientId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkViewerResponseDto": {
+      "type": "object",
+      "properties": {
+        "linkUrl": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "LinkViewerSource": {
+      "enum": [
+        "BuildIn",
+        "Recipient",
+        "BuyerShared",
+        "SellerShared",
+        "ACL"
+      ],
+      "type": "string"
+    },
+    "LiveSendMigrationMonitorRequest": {
+      "required": [
+        "queries",
+        "startTime",
+        "tenants"
+      ],
+      "type": "object",
+      "properties": {
+        "startTime": {
+          "format": "date-time",
+          "default": "2020-01-01T00:00:00",
+          "type": "string",
+          "example": "2020-01-01T00:00:00"
+        },
+        "endTime": {
+          "format": "date-time",
+          "default": "2020-12-31T00:00:00",
+          "type": "string",
+          "example": "2020-12-31T00:00:00"
+        },
+        "tenants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "queries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MigrationMonitorQueryType"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LoadMeetingVideoCommentsResponseDto": {
+      "type": "object",
+      "properties": {
+        "offset": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "userProfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserProfileDto"
+          }
+        },
+        "hasMore": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MeetingVideoCommentDataResponseDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LoadMeetingVideoCommentsTimelineResponseDto": {
+      "type": "object",
+      "properties": {
+        "userProfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserProfileDto"
+          }
+        },
+        "timeline": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MeetingVideoCommentTimelineDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "LogEventLevel": {
+      "enum": [
+        "Verbose",
+        "Debug",
+        "Information",
+        "Warning",
+        "Error",
+        "Fatal"
+      ],
+      "type": "string"
+    },
+    "LoginUserDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "loginType": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MeetingPaticipant": {
+      "type": "object",
+      "properties": {
+        "externalId": {
+          "type": "string"
+        },
+        "isPresenter": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MeetingProvider": {
+      "enum": [
+        "Seismic",
+        "Zoom",
+        "Webex",
+        "Teams"
+      ],
+      "type": "string"
+    },
+    "MeetingVideoCommentDataResponseDto": {
+      "type": "object",
+      "properties": {
+        "videoTime": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "commentId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "commentType": {
+          "$ref": "#/definitions/CommentType"
+        },
+        "createdUserType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "createdBy": {
+          "type": "string"
+        },
+        "commentBody": {
+          "type": "string"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "isHidden": {
+          "type": "boolean"
+        },
+        "hiddenBy": {
+          "type": "string"
+        },
+        "modifiedAt": {
+          "type": "string"
+        },
+        "resolvedBy": {
+          "type": "string"
+        },
+        "resolvedAt": {
+          "type": "string"
+        },
+        "deletedBy": {
+          "type": "string"
+        },
+        "deletedUserType": {
+          "type": "string"
+        },
+        "deletedAt": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "reactions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommentReactionDto"
+          }
+        },
+        "latestReplyAt": {
+          "type": "string"
+        },
+        "threadSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserProfileDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MeetingVideoCommentModifiedResponseDto": {
+      "type": "object",
+      "properties": {
+        "updateStatus": {
+          "$ref": "#/definitions/ActionStatus"
+        },
+        "updatedResult": {
+          "$ref": "#/definitions/MeetingVideoCommentDataResponseDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MeetingVideoCommentModifyRequestDto": {
+      "type": "object",
+      "properties": {
+        "commentBody": {
+          "type": "string"
+        },
+        "videoTime": {
+          "type": "string"
+        },
+        "mentionedUsers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginUserDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MeetingVideoCommentRequestDto": {
+      "type": "object",
+      "properties": {
+        "videoTime": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "enableEmail": {
+          "type": "boolean"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "nanoId": {
+          "type": "string"
+        },
+        "commentBody": {
+          "type": "string"
+        },
+        "commentType": {
+          "$ref": "#/definitions/CommentType"
+        },
+        "parentCommentId": {
+          "type": "string"
+        },
+        "createdBy": {
+          "$ref": "#/definitions/LoginUserDto"
+        },
+        "mentionedUsers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LoginUserDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "MeetingVideoCommentTimelineDto": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "videoTime": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "index": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "commentId": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "MigrationMonitorQueryType": {
+      "enum": [
+        "OverallStatus",
+        "ErrorStatus",
+        "Performance"
+      ],
+      "type": "string"
+    },
+    "NotificationSettingType": {
+      "enum": [
+        "NotificationOnThreadComments",
+        "NotificationOnAtComments",
+        "NotificationOnAllComments"
+      ],
+      "type": "string"
+    },
+    "NotificationType": {
+      "enum": [
+        "None",
+        "Summary",
+        "All"
+      ],
+      "type": "string"
+    },
+    "OSType": {
+      "enum": [
+        "unknown",
+        "android",
+        "ios",
+        "linux",
+        "osx",
+        "windows"
+      ],
+      "type": "string"
+    },
+    "PageThumbnailDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "screenId": {
+          "type": "string"
+        },
+        "screenName": {
+          "type": "string"
+        },
+        "pageNumber": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "setId": {
+          "type": "string"
+        },
+        "index": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "downloadUrl": {
+          "type": "string"
+        },
+        "documentPageIndex": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PivacyDisclaimerType": {
+      "enum": [
+        "NoneDisclamer",
+        "DisclamerWithPrivacySetting",
+        "DisclamerWithoutPrivacySetting",
+        "DisclamerWithRejectAll"
+      ],
+      "type": "string"
+    },
+    "PrivacyCountryDto": {
+      "required": [
+        "code"
+      ],
+      "type": "object",
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "disclaimerLibrary": {
+          "$ref": "#/definitions/PrivacyDisclaimerDto"
+        },
+        "disclaimerId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PrivacyDisclaimerDto": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/PivacyDisclaimerType"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "translations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrivacyDisclaimerTranslationDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PrivacyDisclaimerTranslationDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PrivacyPolicyUrlDto": {
+      "required": [
+        "name",
+        "url"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "minLength": 1,
+          "type": "string"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "order": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "PrivacyRegionDto": {
+      "required": [
+        "code"
+      ],
+      "type": "object",
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "disclaimerId": {
+          "type": "string"
+        },
+        "countries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrivacyCountryDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PrivacySettingDto": {
+      "type": "object",
+      "properties": {
+        "isEnable": {
+          "type": "boolean"
+        },
+        "defaultLanguage": {
+          "type": "string"
+        },
+        "policyUrls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrivacyPolicyUrlDto"
+          }
+        },
+        "disclaimers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrivacyDisclaimerDto"
+          }
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrivacyRegionDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ProblemDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": { }
+    },
+    "ProductAreaType": {
+      "enum": [
+        "unknown",
+        "admin",
+        "contentmanager",
+        "doccenter",
+        "documentcart",
+        "homepage",
+        "liveinsights",
+        "livesend",
+        "livesendviewer",
+        "meetingspace",
+        "newscenter",
+        "predictive",
+        "profilebuilder",
+        "search",
+        "workspace",
+        "emailblast",
+        "not-applicable"
+      ],
+      "type": "string"
+    },
+    "QueryFlatCommentRequestDto": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "endDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "offset": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "limit": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "QueryFlatCommentRequestDtoPaginationDto": {
+      "type": "object",
+      "properties": {
+        "pageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "totalCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "hasMore": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryFlatCommentRequestDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "RecipientEmailValidationRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "interactionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "nanoId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RecipientRequestDto": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RecipientUrlDto": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RemedySessionData": {
+      "type": "object",
+      "properties": {
+        "sessionIds": {
+          "type": "array",
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "observerTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SessionSummaryObserverType"
+          }
+        },
+        "eventTag": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SearchDirection": {
+      "enum": [
+        "Before",
+        "After"
+      ],
+      "type": "string"
+    },
+    "SellerShareLinkRequest": {
+      "type": "object",
+      "properties": {
+        "engagementId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementType": {
+          "$ref": "#/definitions/EngagementType"
+        },
+        "externalReferenceId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "isSeparateSend": {
+          "type": "boolean"
+        },
+        "linkViewer": {
+          "$ref": "#/definitions/LinkViewerRequest"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ServiceError": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "errorCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "eventIdentifier": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SessionContentCoverThumbnailThinDto": {
+      "type": "object",
+      "properties": {
+        "contentUniqueId": {
+          "type": "string"
+        },
+        "downloadUrl": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SessionMigrationDeliveryType": {
+      "enum": [
+        "DSR",
+        "LiveSend",
+        "All"
+      ],
+      "type": "string"
+    },
+    "SessionMigrationTriggerRequest": {
+      "required": [
+        "cutoffDateUtc"
+      ],
+      "type": "object",
+      "properties": {
+        "taskDelayMs": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tenantScopes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TenantInteractionScope"
+          }
+        },
+        "excludeTenants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cutoffDateUtc": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "runAtUtc": {
+          "type": "string"
+        },
+        "sessionEndTimeWindowStartUtc": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sessionEndTimeWindowEndUtc": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "deliveryType": {
+          "$ref": "#/definitions/SessionMigrationDeliveryType"
+        },
+        "chunkSize": {
+          "format": "int32",
+          "maximum": 1000,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "dryRun": {
+          "type": "boolean"
+        },
+        "force": {
+          "type": "boolean"
+        },
+        "maxSessionsPerInteraction": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "esApiPageSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isNeedLogDetail": {
+          "type": "boolean"
+        },
+        "onlyMigrateSessionSummaryIsNull": {
+          "type": "boolean"
+        },
+        "orderByTenantASC": {
+          "type": "boolean"
+        },
+        "orderBySessionEndDateDesc": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SessionSummaryObserverType": {
+      "enum": [
+        "Email",
+        "EngSvc",
+        "Disc",
+        "SessionSummary"
+      ],
+      "type": "string"
+    },
+    "SettingBase": {
+      "type": "object",
+      "properties": {
+        "settingName": {
+          "$ref": "#/definitions/BuyerExperienceSettingName"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SharingEventDto": {
+      "type": "object",
+      "properties": {
+        "createdTime": {
+          "type": "string"
+        },
+        "recipientEmailAddress": {
+          "type": "string"
+        },
+        "sharingEventId": {
+          "type": "string"
+        },
+        "sharingUserEmailAddress": {
+          "type": "string"
+        },
+        "sharingUserFirstName": {
+          "type": "string"
+        },
+        "sharingUserLastName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SharingLinkRequestV1": {
+      "required": [
+        "messageSubject",
+        "nanoId",
+        "newRecipientEmailAddress",
+        "sessionId",
+        "sharingUserEmailAddress",
+        "sharingUserFirstName",
+        "sharingUserLastName"
+      ],
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "nanoId": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserFirstName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserLastName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserEmailAddress": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        },
+        "newRecipientEmailAddress": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        },
+        "messageSubject": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "shortMessage": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SharingLinkRequestV2": {
+      "required": [
+        "isSubDomain",
+        "messageSubject",
+        "newRecipientEmailAddress",
+        "sessionId",
+        "sharingUserEmailAddress",
+        "sharingUserFirstName",
+        "sharingUserLastName"
+      ],
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "isSubDomain": {
+          "type": "boolean"
+        },
+        "sharingUserFirstName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserLastName": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sharingUserEmailAddress": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        },
+        "newRecipientEmailAddress": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        },
+        "messageSubject": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "shortMessage": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StringServiceResultInfo": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "error": {
+          "$ref": "#/definitions/ServiceError"
+        },
+        "serviceResult": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SwapLinkEmail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SwapLinkRequest": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "integrationClient": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "email": {
+          "$ref": "#/definitions/SwapLinkEmail"
+        },
+        "sender": {
+          "$ref": "#/definitions/UserDto"
+        },
+        "recipients": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "linkSettings": {
+          "$ref": "#/definitions/GroupSendLiveSendSettings"
+        },
+        "clientDetails": {
+          "$ref": "#/definitions/ClientDetailDto"
+        }
+      },
+      "additionalProperties": false
+    },
+    "SwapLinkResponse": {
+      "type": "object",
+      "properties": {
+        "operationId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "engagementId": {
+          "type": "string"
+        },
+        "engagementType": {
+          "type": "string"
+        },
+        "swappedLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SwappedLinkInfo"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "SwappedLinkInfo": {
+      "type": "object",
+      "properties": {
+        "originalLink": {
+          "type": "string"
+        },
+        "swappedLink": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TenantInteractionScope": {
+      "type": "object",
+      "properties": {
+        "tenant": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "interactionIds": {
+          "type": "array",
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "sessionIds": {
+          "type": "array",
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "TiledContentPageDto": {
+      "type": "object",
+      "properties": {
+        "externalUniqueId": {
+          "type": "string"
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TiledPageDto"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "TiledPageDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "screenId": {
+          "type": "string"
+        },
+        "documentId": {
+          "type": "string"
+        },
+        "setId": {
+          "type": "string"
+        },
+        "index": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "documentPageIndex": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TrackingType": {
+      "enum": [
+        "AllTracking",
+        "FunctionalTracking",
+        "StrictlyNecessary"
+      ],
+      "type": "string"
+    },
+    "UploadBlobRequestDto": {
+      "type": "object",
+      "properties": {
+        "fileBase64Data": {
+          "type": "string"
+        },
+        "fileFormat": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UploadBlobResponseDto": {
+      "type": "object",
+      "properties": {
+        "containerName": {
+          "type": "string"
+        },
+        "blobId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserDto": {
+      "type": "object",
+      "properties": {
+        "seismicId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "isDeactivated": {
+          "type": "boolean"
+        },
+        "phoneNumber": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserProfileDto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "userType": {
+          "$ref": "#/definitions/UserType"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string",
+          "readOnly": true
+        },
+        "emailAddress": {
+          "type": "string"
+        },
+        "avatarDownloadUrl": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "deactivated": {
+          "type": "string"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "userName": {
+          "type": "string"
+        },
+        "deleted": {
+          "type": "string"
+        },
+        "languageCode": {
+          "type": "string"
+        },
+        "userTimeZoneId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserType": {
+      "enum": [
+        "Buyer",
+        "Seller",
+        "Guest"
+      ],
+      "type": "string"
+    },
+    "ViewerContext": {
+      "type": "object",
+      "properties": {
+        "productArea": {
+          "type": "string"
+        },
+        "meetingVersionId": {
+          "type": "string"
+        },
+        "externalMeetingId": {
+          "type": "string"
+        },
+        "meetingProvider": {
+          "$ref": "#/definitions/MeetingProvider"
+        },
+        "paticipants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MeetingPaticipant"
+          }
+        },
+        "viewerType": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Example: Bearer {token}"
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
